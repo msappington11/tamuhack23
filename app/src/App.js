@@ -4,10 +4,8 @@ import { createTheme, ThemeProvider } from "@mui/material";
 
 // import AboutPage from "./pages/AboutPage"
 import LoginPage from "./pages/LoginPage"
-// import NewSelectionPage from "./pages/NewSelectionPage"
-// import SamplePage from "./pages/SamplePage"
-// import RatingsPage from "./pages/RatingsPage"
-// import RegistrationPage from "./pages/RegistrationPage"
+import HomePage from "./pages/HomePage"
+import ListPage from "./pages/ListPage"
 
 // import Footer from "./pages/Footer"
 
@@ -36,6 +34,8 @@ function App() {
         <BrowserRouter>
           <Routes> 
             <Route path="/" element={<LoginPage />} />
+            <Route path="/HomePage" element={<HomePage />} />
+            <Route path="/ListPage" element={<ListPage />} />
           </Routes>
           {/* <Footer /> */}
         </BrowserRouter>
