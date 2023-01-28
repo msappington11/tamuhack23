@@ -3,7 +3,7 @@ import { UseState, useEffect } from 'react'
 import SignIn from '../components/SignIn'
 import axios from 'axios'
 
-export default function HomePage() {
+export default function LoginPage() {
     
 
     return (

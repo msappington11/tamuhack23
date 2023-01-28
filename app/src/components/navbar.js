@@ -1,10 +1,10 @@
 import { useState, useEffect, useContext } from 'react'
-import { Typography, Menu, MenuItem } from '@mui/material'
+import { Typography, Menu, MenuItem, Button } from '@mui/material'
 import SignIn from './SignIn'
 
 import { UserContext } from '../contexts/UserContext'
 
-export default function navbar() {
+export default function Navbar() {
     const { user, setUser } = useContext(UserContext)
     const [profileAnchor, setProfileAnchor] = useState(null) // used for signout
 
@@ -28,7 +28,7 @@ export default function navbar() {
     )
 
     function logout() {
-        setUser(null)
+        setUser({})
         localStorage.removeItem('fname')
         localStorage.removeItem('lname')
         localStorage.removeItem('email')

@@ -3,14 +3,13 @@ import { Route, Routes, BrowserRouter } from "react-router-dom"
 import { createTheme, ThemeProvider } from "@mui/material";
 
 // import AboutPage from "./pages/AboutPage"
-import HomePage from "./pages/HomePage"
+import LoginPage from "./pages/LoginPage"
 // import NewSelectionPage from "./pages/NewSelectionPage"
 // import SamplePage from "./pages/SamplePage"
 // import RatingsPage from "./pages/RatingsPage"
 // import RegistrationPage from "./pages/RegistrationPage"
 
 // import Footer from "./pages/Footer"
-// import NavBar from "./pages/NavBar"
 
 import { UserContext } from "./contexts/UserContext"
 
@@ -35,9 +34,8 @@ function App() {
       <ThemeProvider theme={theme}>
         <UserContext.Provider value={{user, setUser}}>
         <BrowserRouter>
-        {/* <NavBar /> */}
           <Routes> 
-            <Route path="/" element={<HomePage />} />
+            <Route path="/" element={<LoginPage />} />
           </Routes>
           {/* <Footer /> */}
         </BrowserRouter>
