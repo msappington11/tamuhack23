@@ -1,12 +1,13 @@
 import { Typography } from '@mui/material'
-import { UseState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import SignIn from '../components/SignIn'
 import axios from 'axios'
 
 import NavBar from './NavBar'
 
-export default function HomePage() {
-    
+import Navbar from '../components/navbar'
+
+export default function ListPage() {
 
     return (
         <div>

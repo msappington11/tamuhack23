@@ -52,8 +52,17 @@ app.get('/api/search_item/:item', async function(req, res) {
     // search
 })
 
-app.get('/api/get_recipes', async function(req, res) {
-    // call to db to get recipe IDK
+app.get('/api/get_recipes', function(req, response) {
+    // let query = `SELECT * 
+    //             FROM "RECIPES" 
+    //             JOIN "INGREDIENTS" 
+    //                 ON "INGREDIENTS"."RECIPE_ID" = "RECIPES"."RECIPE_ID"
+    //             JOIN USERS
+    //                 ON "USERS"."USER_ID" = "RECIPES"."RECIPE_ID"
+    //                 `
+    // pool.query(query, (err, res) => {
+
+    // })
 })
 
 // // WALMART SITE TESTING
