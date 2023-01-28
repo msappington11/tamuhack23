@@ -11,8 +11,14 @@ export default function RecipesPage() {
         // get users recipes
         let options = {
             method: 'GET',
-            url: '/'
+            url: '/api/get_recipes'
         }
+        axios.request(options).then((res) => {
+
+        })
+        .catch((err) => {
+            console.log(err)
+        })
     } ,[])
 
     return (
