@@ -1,23 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { Route, Routes, BrowserRouter } from "react-router-dom"
+import { createTheme, ThemeProvider } from "@mui/material";
+
+// import AboutPage from "./pages/AboutPage"
+import HomePage from "./pages/HomePage"
+// import NewSelectionPage from "./pages/NewSelectionPage"
+// import SamplePage from "./pages/SamplePage"
+// import RatingsPage from "./pages/RatingsPage"
+// import RegistrationPage from "./pages/RegistrationPage"
+
+// import Footer from "./pages/Footer"
+// import NavBar from "./pages/NavBar"
+
+import { UserContext } from "./contexts/UserContext"
+
 
 function App() {
+  const [user, setUser] = useState(false)
+
+  const theme = createTheme({
+    palette: {
+      primary: { main: '#843a3a' },
+    },
+    typography: {
+      button: {
+        textTransform: 'none',
+        fontSize: 'large'
+      }
+    }
+  })
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ThemeProvider theme={theme}>
+        <UserContext.Provider value={{user, setUser}}>
+        <BrowserRouter>
+        {/* <NavBar /> */}
+          <Routes> 
+            <Route path="/" element={<HomePage />} />
+          </Routes>
+          {/* <Footer /> */}
+        </BrowserRouter>
+        </UserContext.Provider>
+      </ThemeProvider>
     </div>
   );
 }
