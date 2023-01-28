@@ -4,8 +4,9 @@ const path = require('path')
 const { Pool } = require('pg')
 const axios = require('axios')
 const cors = require('cors')
+const fs = require("fs")
 
-dotenv.config({path: '../../.env'}) // IDK HOW THIS WORKS WITH HEROKU
+dotenv.config({path: './.env'}) // IDK HOW THIS WORKS WITH HEROKU
 const PORT = process.env.PORT || 1111 // this needs to match proxy in front-end package.json
 const DATABASE_URL = process.env.DATABASE_URL
 
@@ -46,12 +47,12 @@ app.get('/api/search_item/:item', async function(req, res) {
     
 })
 
-// WALMART SITE TESTING
-const walmartTest = async function(url) {
-    const res = await axios.get(url);
-    return res;
-}
-console.log(walmartTest("https://www.walmart.com/ip/Marketside-Roasted-Red-Pepper-Hummus-10-Oz/110895339?fulfillmentIntent=Pickup"));
+// // WALMART SITE TESTING
+// const walmartTest = async function(url) {
+//     const res = await axios.get(url);
+//     return res;
+// }
+// console.log(walmartTest("https://www.walmart.com/ip/Marketside-Roasted-Red-Pepper-Hummus-10-Oz/110895339?fulfillmentIntent=Pickup"));
 
 fs.readdir("./routes", (err, files) => {
     files.forEach(file => {
