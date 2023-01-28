@@ -37,7 +37,7 @@ pool.connect()
 // start listening
 app.listen(PORT, () => console.log('Server on PORT: ' + PORT))
 
-app.get('/*Page', function(req, res) {
+app.get('/*', function(req, res) {
     res.sendFile(path.join(__dirname, 'build/index.html'), function(err) {
         if (err) {
         res.status(500).send(err)
@@ -63,10 +63,10 @@ app.get('/api/get_recipes', async function(req, res) {
 // }
 // console.log(walmartTest("https://www.walmart.com/ip/Marketside-Roasted-Red-Pepper-Hummus-10-Oz/110895339?fulfillmentIntent=Pickup"));
 
-fs.readdir("./routes", (err, files) => {
-    files.forEach(file => {
-        var routeName = file.split(".")[0];
-        var router = require(`./routes/${routeName}`);
-        app.use(`/${routeName}`, router);
-    });
-});
+// fs.readdir("./routes", (err, files) => {
+//     files.forEach(file => {
+//         var routeName = file.split(".")[0];
+//         var router = require(`./routes/${routeName}`);
+//         app.use(`/${routeName}`, router);
+//     });
+// });
