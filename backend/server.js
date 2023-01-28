@@ -40,3 +40,7 @@ app.get('/*Page', function(req, res) {
         }
     })
 })
+
+app.get('/api/search_item/:item', async function(req, res) {
+    
+})
