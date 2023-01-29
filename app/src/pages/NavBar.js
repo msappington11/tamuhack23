@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import SignIn from '../components/SignIn'
 
 import '../styles/home-style.css'
 
@@ -6,18 +7,22 @@ function NavBar() {
     const navigate = useNavigate();
 
     return (
-        <nav className='top-page'>
-            <div class="banner">
-                <a href="/" onClick={() => navigate("/")}><img src="images/marketpad-logo.png" height="100" alt="Link to Album of the Week Home"></img></a>
-                <div className='more-header'>
-                    <a href="/aboutPage" onClick={() => navigate("/aboutPage")}>About</a>
-                    <a href="/selectionPage" onClick={() => navigate("/selectionPage")}>Selection</a>
-                    <a href="/registerPage" onClick={() => navigate("/registerPage")}>Register</a>
-                    <a href="/ratingsPage" onClick={() => navigate("/ratingsPage")}>Ratings</a>
-                    <a href="/samplePage" onClick={() => navigate("/samplePage")}>Sample Page</a>
+        <nav id='menu'>
+            <ul>
+                <li><a href='/HomePage' onClick={() => navigate("/HomePage")} class="image-yeet"><img src="images/marketpad-banner.png" alt="Link to Marketpad Home" height="40"></img></a></li>
+                <li><a href='/ListPage' onClick={() => navigate("/ListPage")} class="linknav">Grocery List</a></li>
+                <li><a href='/RecipePage' onClick={() => navigate("/RecipePage")} class="linknav">Recipes</a></li>
+                <li><a class='dropdown-arrow'>Sample Dropdown</a>
+                <ul class='sub-menus'>
+                    <li><a href='/HomePage' onClick={() => navigate("/HomePage")}>drums</a></li>
+                    <li><a href='/HomePage' onClick={() => navigate("/HomePage")}>please</a></li>
+                    <li><a href='/HomePage' onClick={() => navigate("/HomePage")}>fab</a></li>
+                </ul>
+                </li>
+            </ul>
+            <div class="GoogleSignIn">
+                    <SignIn></SignIn>
                 </div>
-            </div>
-            
         </nav>
     )
 }
